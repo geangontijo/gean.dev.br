@@ -1,4 +1,4 @@
-![](https://imgur.com/d73a2ba1-b598-4828-a658-f9bb67a39863)
+![](https://i.imgur.com/u0Oq5cp.jpeg)
 
 ---
 
