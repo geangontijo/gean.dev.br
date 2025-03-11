@@ -82,7 +82,7 @@ export async function getStaticProps() {
   })
   let data2 = await blog.getPosts({
     query: {
-      author: 'abdulrcs',
+      author: 'geangontijo',
       type: 'post',
       state: 'published',
     },

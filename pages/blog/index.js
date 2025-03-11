@@ -144,7 +144,7 @@ export async function getStaticProps() {
   })
   const posts = await blog.getPosts({
     query: {
-      author: 'abdulrcs',
+      author: 'geangontijo',
       type: 'post',
       state: 'published',
     },

@@ -229,7 +229,7 @@ export async function getStaticPaths() {
 
   const data = await blog.getPosts({
     query: {
-      author: 'abdulrcs',
+      author: 'geangontijo',
       type: 'project',
       state: 'published',
     },
@@ -251,7 +251,7 @@ export async function getStaticProps({ params }) {
   })
   const data = await blog.getPost({
     query: {
-      author: 'abdulrcs',
+      author: 'geangontijo',
       type: 'project',
       search: params.slug,
     },
