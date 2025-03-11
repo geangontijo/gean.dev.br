@@ -139,7 +139,7 @@ export default function Index({ posts }) {
 
 export async function getStaticProps() {
   const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+    repo: 'geangontijo/gean.dev.br',
     token: process.env.GITHUB_TOKEN,
   })
   const posts = await blog.getPosts({

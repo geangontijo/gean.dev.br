@@ -193,7 +193,7 @@ export default function Post({ metadata, publishedDate, source, toc }) {
 
 export async function getStaticPaths() {
   const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+    repo: 'geangontijo/gean.dev.br',
     token: process.env.GITHUB_TOKEN,
   })
 
@@ -216,7 +216,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+    repo: 'geangontijo/gean.dev.br',
     token: process.env.GITHUB_TOKEN,
   })
   const data = await blog.getPost({

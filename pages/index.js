@@ -77,7 +77,7 @@ export async function getStaticProps() {
   })
 
   const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+    repo: 'geangontijo/gean.dev.br',
     token: process.env.GITHUB_TOKEN,
   })
   let data2 = await blog.getPosts({
