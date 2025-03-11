@@ -60,8 +60,8 @@ export default function Index({ posts }) {
           Blog
         </Heading>
         <Text fontSize={{ base: '14px', md: '16px' }}>
-          This is where I share my writings on programming, tutorials, and my
-          experiences.
+          É aqui que compartilho meus escritos sobre programação, tutoriais e minhas
+          experiências.
         </Text>
         <InputGroup maxW="400px">
           <InputRightElement pointerEvents="none">
