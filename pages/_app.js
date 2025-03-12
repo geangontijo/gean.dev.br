@@ -1,7 +1,10 @@
+import { appWithTranslation } from 'next-i18next'
 import { ChakraProvider } from '@chakra-ui/react'
 import customTheme from '../styles/theme'
 import { Global, css } from '@emotion/react'
 import { prismDarkTheme } from '../styles/prism'
+import nextI18NextConfig from '../next-i18next.config'
+
 const GlobalStyle = ({ children }) => {
   return (
     <>
@@ -52,4 +55,4 @@ function MyApp({ Component, pageProps }) {
     </ChakraProvider>
   )
 }
-export default MyApp
+export default appWithTranslation(MyApp, nextI18NextConfig)

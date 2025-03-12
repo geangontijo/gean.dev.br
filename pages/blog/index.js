@@ -9,8 +9,11 @@ import useMediaQuery from '../../hook/useMediaQuery'
 import dateFormat from 'dateformat'
 
 import { GithubBlog } from '@rena.to/github-blog'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export default function Index({ posts }) {
+  const { t } = useTranslation()
   const [query, setQuery] = useState('')
   const handleChange = (e) => setQuery(e.target.value)
   const isLargerThan1024 = useMediaQuery(1024)
@@ -60,8 +63,7 @@ export default function Index({ posts }) {
           Blog
         </Heading>
         <Text fontSize={{ base: '14px', md: '16px' }}>
-          É aqui que compartilho meus escritos sobre programação, tutoriais e minhas
-          experiências.
+          {t('blog-description')}
         </Text>
         <InputGroup maxW="400px">
           <InputRightElement pointerEvents="none">
@@ -137,7 +139,7 @@ export default function Index({ posts }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({locale}) {
   const blog = new GithubBlog({
     repo: 'geangontijo/gean.dev.br',
     token: process.env.GITHUB_TOKEN,
@@ -158,6 +160,7 @@ export async function getStaticProps() {
           Date.parse(b.post.frontmatter.date) -
           Date.parse(a.post.frontmatter.date),
       ),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   }
 }

@@ -17,9 +17,11 @@ import {
 import useMediaQuery from '../hook/useMediaQuery'
 import SlideUpWhenVisible from '../hook/SlideUpWhenVisible'
 import ReactGA from 'react-ga4'
+import { useTranslation } from 'next-i18next'
 
 export default function AboutMe() {
   const isLargerThan800 = useMediaQuery(800)
+  const { t } = useTranslation()
   const handleHover = (event) => {
     ReactGA.event({
       category: 'hover',
@@ -63,19 +65,18 @@ export default function AboutMe() {
         <SlideUpWhenVisible>
           <Stack spacing={4}>
             <Heading fontFamily="Ubuntu" fontSize="2xl">
-              ⚡ Sobre mim
+              ⚡ {t('about-me')}
             </Heading>
             <Text
               color="textSecondary"
               fontSize={{ base: '14px', md: '16px' }}
               whiteSpace="pre-line"
             >
-              Olá! Eu sou Gean Gontijo, destrincho o funcionamento de computadores desde pequeno, e sou apaixonado por eles desde então. <br />
-              <br /> Tenho especialização em Laravel, apaixonado por criar soluções que vão além do código: desempenho, segurança e escalabilidade são meu foco. Desde cedo, mergulhei no mundo da tecnologia e infraestrutura, buscando sempre entregar sistemas robustos e eficientes.
-
+              {t('greeting')} <br />
+              <br /> {t('specialization')}
             </Text>
             <Heading fontFamily="Ubuntu" fontSize="1xl">
-              💡 O que me diferencia?
+              {t('what-differentiates-me')}
             </Heading>
 
             <Text
@@ -83,8 +84,8 @@ export default function AboutMe() {
               fontSize={{ base: '14px', md: '16px' }}
               whiteSpace="pre-line"
             >
-              <strong>✅ Infraestrutura otimizada</strong> – redução de custos e alta performance garantida. <br/>
-              <strong> ✅ Foco em negócios</strong> – cada linha de código pensada para gerar impacto real.
+              <strong>{t('optimized-infrastructure')}</strong> <br/>
+              <strong>{t('business-focus')}</strong>
             </Text>
           </Stack>
         </SlideUpWhenVisible>

@@ -8,6 +8,7 @@ import AboutMe from '../components/AboutMe'
 import ContactMe from '../components/ContactMe'
 
 import { GithubBlog } from '@rena.to/github-blog'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export default function Index({ introduction, projects, articles, contactMe }) {
   return (
@@ -70,7 +71,7 @@ let client = require('contentful').createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 })
 
-export async function getStaticProps() {
+export async function getStaticProps({locale}) {
   let data = await client.getEntries({
     content_type: 'featuredProjects',
     order: 'fields.order',
@@ -114,6 +115,7 @@ export async function getStaticProps() {
         .slice(0, 4),
       introduction: data3.items,
       contactMe: data4.items,
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   }
 }

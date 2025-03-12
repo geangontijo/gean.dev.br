@@ -19,8 +19,10 @@ import NextLink from 'next/link'
 import styled from '@emotion/styled'
 import useMediaQuery from '../hook/useMediaQuery'
 import { AiOutlineMenu } from 'react-icons/ai'
+import { useTranslation } from 'next-i18next'
 
 export default function Navbar({ enableTransition }) {
+  const { t } = useTranslation()
   const isLargerThan768 = useMediaQuery(768)
   const { isOpen, onOpen, onClose } = useDisclosure()
   const firstField = useRef()
@@ -47,7 +49,7 @@ export default function Navbar({ enableTransition }) {
             <Stack spacing="24px">
               <NextLink passHref href="/">
                 <Button as="a" fontSize="16px" variant="ghost">
-                  Início
+                  {t('home')}
                 </Button>
               </NextLink>
               {/* <NextLink passHref href="/projects">
@@ -106,7 +108,7 @@ export default function Navbar({ enableTransition }) {
             <Box mr={7} color="displayColor">
               <NextLink passHref href="/">
                 <Button as="a" p="4" fontSize="16px" variant="ghost">
-                  Início
+                  {t('home')}
                 </Button>
               </NextLink>
               {/* <NextLink passHref href="/projects">

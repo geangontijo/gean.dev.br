@@ -3,8 +3,10 @@ import useMediaQuery from '../hook/useMediaQuery'
 import { FaLinkedin, FaEnvelope, FaFileAlt } from 'react-icons/fa'
 import SlideUpWhenVisible from '../hook/SlideUpWhenVisible'
 import ReactGA from 'react-ga4'
+import { useTranslation } from 'next-i18next'
 
 export default function ContactMe({ contactMe }) {
+  const { t } = useTranslation()
   const isLargerThan800 = useMediaQuery(800)
   const handleClick = (event) => {
     ReactGA.event({
@@ -16,7 +18,7 @@ export default function ContactMe({ contactMe }) {
     <Stack alignItems="center" justifyContent="center" w="100%" spacing={10}>
       <SlideUpWhenVisible>
         <Heading fontSize={{ base: '4xl', md: '5xl' }} textAlign="center">
-          Entre em contato:
+          {t('contact-me')}
         </Heading>
       </SlideUpWhenVisible>
 
@@ -78,7 +80,7 @@ export default function ContactMe({ contactMe }) {
               leftIcon={<FaFileAlt fill="#3CCF91" />}
               size={isLargerThan800 ? 'md' : 'sm'}
             >
-              Curriculo
+              {t('resume')}
             </Button>
           </Link>
         </Stack>

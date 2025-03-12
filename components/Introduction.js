@@ -11,8 +11,10 @@ import {
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
 import useMediaQuery from '../hook/useMediaQuery'
 import ReactGA from 'react-ga4'
+import { useTranslation } from 'next-i18next'
 
 export default function Introduction({ introduction }) {
+  const { t } = useTranslation()
   const isLargerThan800 = useMediaQuery(800)
   const handleClick = (event) => {
     ReactGA.event({
@@ -51,7 +53,7 @@ export default function Introduction({ introduction }) {
             fontSize="display2"
             fontWeight="medium"
           >
-            Olá!, eu sou -
+            {t('hello-there')}
           </Text>
         </Box>
         <Heading
@@ -79,9 +81,9 @@ export default function Introduction({ introduction }) {
           whiteSpace="pre-wrap"
         >
           <Box as="span" color="displayColor">
-            Engenheiro de Software.
+            {t('software-enginner')}.
           </Box>{' '}
-          5+ Anos de experiência, transformando ideias em código e sistemas escaláveis!
+          {t('main-description')}
         </Heading>
       </SlideFade>
 
@@ -91,26 +93,20 @@ export default function Introduction({ introduction }) {
         in={true}
       >
         <Text color="textSecondary" fontSize="display3">
-          {introduction[0].fields.emoji} {introduction[0].fields.description}
+          {t('secondary-description')}
           <br />
           <Stack isInline spacing={1}>
-            <Box>{introduction[1].fields.emoji}</Box>
+            <Box>⚡</Box>
             <Box>
-              {introduction[1].fields.description}{' '}
-              {introduction[1].fields.companyUrl ? (
+              {t('tech-lead-in')}{' '}
                 <Link
-                  href={introduction[1].fields.companyUrl}
+                  href="https://mobilestock.com.br/"
                   isExternal
                   onClick={() => handleClick('Introduction_companyUrl')}
                   rel="noreferrer"
                 >
-                  {introduction[1].fields.company}
+                  MobileStock
                 </Link>
-              ) : (
-                <Box as="span" color="button1">
-                  {introduction[1].fields.company}
-                </Box>
-              )}
             </Box>
           </Stack>
         </Text>
