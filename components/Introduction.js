@@ -109,6 +109,13 @@ export default function Introduction({ introduction }) {
                 </Link>
             </Box>
           </Stack>
+          <br />
+          <Stack isInline spacing={1}>
+            <Box>👥</Box>
+            <Box>
+              {t('team-size')}
+            </Box>
+          </Stack>
         </Text>
       </SlideFade>
       <SlideFade
