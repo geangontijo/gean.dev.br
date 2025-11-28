@@ -17,14 +17,14 @@ export default function Index({ introduction, projects, articles, contactMe }) {
       <Head>
           <title>Gean Gontijo - Engenheiro de Software</title>
           <meta content="Gean Gontijo - Engenheiro de Software" name="title" />
-          <meta name="description" content="Gean Gontijo - Engenheiro de Software com mais de 5 anos de experiência. Especialista em Back-end (Laravel / PHP), transformando ideias em código e sistemas escaláveis! CTO no MobileStock, liderando uma equipe de 9 devs."/>
-          <meta name="keywords" content="Gean Gontijo, Engenheiro de Software, Desenvolvedor Back-end, Laravel, PHP, CTO, MobileStock, Sistemas Escaláveis, Liderança de Equipe"/>
+          <meta name="description" content="Gean Gontijo - Engenheiro de Software com mais de 5 anos de experiência. Especialista em Back-end (Laravel / PHP), transformando ideias em código e sistemas escaláveis! Tech Lead no MobileStock."/>
+          <meta name="keywords" content="Gean Gontijo, Engenheiro de Software, Desenvolvedor Back-end, Laravel, PHP, Tech Lead, MobileStock, Sistemas Escaláveis"/>
           <meta name="robots" content="index, follow"/>
 
           <meta content="website" property="og:type" />
           <meta content="https://gean.dev.br" property="og:url" />
           <meta property="og:title" content="Gean Gontijo | Engenheiro de Software"/>
-          <meta property="og:description" content="Transformando ideias em código e sistemas escaláveis! Especialista em Back-end (Laravel / PHP). CTO no MobileStock, liderando uma equipe de 9 devs."/>
+          <meta property="og:description" content="Transformando ideias em código e sistemas escaláveis! Especialista em Back-end (Laravel / PHP). Tech Lead no MobileStock."/>
           <meta property="og:image" content="https://i.imgur.com/o7GMsA6.jpeg"/>
           <meta property="og:url" content="https://gean.dev.br"/>
 
@@ -38,7 +38,7 @@ export default function Index({ introduction, projects, articles, contactMe }) {
             property="twitter:title"
           />
           <meta
-            content="Transformando ideias em código e sistemas escaláveis! Especialista em Back-end (Laravel / PHP). CTO no MobileStock, liderando uma equipe de 9 devs."
+            content="Transformando ideias em código e sistemas escaláveis! Especialista em Back-end (Laravel / PHP). Tech Lead no MobileStock."
             property="twitter:description"
           />
           <meta
