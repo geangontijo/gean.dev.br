@@ -8,7 +8,7 @@ import {
   SlideFade,
   Image,
 } from '@chakra-ui/react'
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaEnvelope, FaGithub, FaLinkedin, FaFileAlt } from 'react-icons/fa'
 import useMediaQuery from '../hook/useMediaQuery'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'next-i18next'
@@ -105,7 +105,7 @@ export default function Introduction({ introduction }) {
                   onClick={() => handleClick('Introduction_companyUrl')}
                   rel="noreferrer"
                 >
-                  MobileStock
+                  Meu Look, LTDA
                 </Link>
             </Box>
           </Stack>
@@ -149,6 +149,20 @@ export default function Introduction({ introduction }) {
               size={isLargerThan800 ? 'md' : 'sm'}
             >
               Email
+            </Button>
+          </Link>
+          <Link
+            href="https://drive.google.com/file/d/1AaI-ljlj0tS0KTclm9exKZC_MAcYmVIM/view?usp=sharing"
+            isExternal
+            onClick={() => handleClick('introduction_resume')}
+          >
+            <Button
+              pos="static"
+              color="white"
+              leftIcon={<FaFileAlt fill="#3CCF91" />}
+              size={isLargerThan800 ? 'md' : 'sm'}
+            >
+              {t('resume')}
             </Button>
           </Link>
         </Stack>
