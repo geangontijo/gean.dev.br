@@ -14,25 +14,37 @@ export default function Index({ introduction, projects, articles, contactMe }) {
   return (
     <>
       <Container enableTransition={true}>
-      <Head>
+        <Head>
           <title>Gean Gontijo - Engenheiro de Software</title>
           <meta content="Gean Gontijo - Engenheiro de Software" name="title" />
-          <meta name="description" content="Gean Gontijo - Engenheiro de Software com mais de 5 anos de experiência. Especialista em Back-end (Laravel / PHP), transformando ideias em código e sistemas escaláveis! Tech Lead no Meu Look, LTDA."/>
-          <meta name="keywords" content="Gean Gontijo, Engenheiro de Software, Desenvolvedor Back-end, Laravel, PHP, Tech Lead, Meu Look, Sistemas Escaláveis"/>
-          <meta name="robots" content="index, follow"/>
+          <meta
+            name="description"
+            content="Gean Gontijo - Engenheiro de Software com mais de 5 anos de experiência. Especialista em Back-end (Laravel / PHP), transformando ideias em código e sistemas escaláveis! Tech Lead no Meu Look, LTDA."
+          />
+          <meta
+            name="keywords"
+            content="Gean Gontijo, Engenheiro de Software, Desenvolvedor Back-end, Laravel, PHP, Tech Lead, Meu Look, Sistemas Escaláveis"
+          />
+          <meta name="robots" content="index, follow" />
 
           <meta content="website" property="og:type" />
           <meta content="https://gean.dev.br" property="og:url" />
-          <meta property="og:title" content="Gean Gontijo | Engenheiro de Software"/>
-          <meta property="og:description" content="Transformando ideias em código e sistemas escaláveis! Especialista em Back-end (Laravel / PHP). Tech Lead no Meu Look, LTDA."/>
-          <meta property="og:image" content="https://i.imgur.com/o7GMsA6.jpeg"/>
-          <meta property="og:url" content="https://gean.dev.br"/>
+          <meta
+            property="og:title"
+            content="Gean Gontijo | Engenheiro de Software"
+          />
+          <meta
+            property="og:description"
+            content="Transformando ideias em código e sistemas escaláveis! Especialista em Back-end (Laravel / PHP). Tech Lead no Meu Look, LTDA."
+          />
+          <meta
+            property="og:image"
+            content="https://i.imgur.com/o7GMsA6.jpeg"
+          />
+          <meta property="og:url" content="https://gean.dev.br" />
 
           <meta content="summary_large_image" property="twitter:card" />
-          <meta
-            content="https://gean.dev.br"
-            property="twitter:url"
-          />
+          <meta content="https://gean.dev.br" property="twitter:url" />
           <meta
             content="Gean Gontijo | Engenheiro de Software"
             property="twitter:title"
@@ -57,7 +69,7 @@ export default function Index({ introduction, projects, articles, contactMe }) {
         >
           <Introduction introduction={introduction} />
           <AboutMe />
-          {/* <FeaturedProjects projects={projects} /> */}
+          <FeaturedProjects projects={projects} />
           <LatestArticle articles={articles} />
           <ContactMe contactMe={contactMe} />
         </Stack>
@@ -71,11 +83,20 @@ let client = require('contentful').createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 })
 
-export async function getStaticProps({locale}) {
-  let data = await client.getEntries({
-    content_type: 'featuredProjects',
-    order: 'fields.order',
-  })
+export async function getStaticProps({ locale }) {
+  // Local projects
+  const projects = [
+    {
+      fields: {
+        title: 'WorkLifeBalancer',
+        slug: 'worklifebalancer',
+        description:
+          'A specialized tool to help users track and balance their personal life with work commitments.',
+        imageUrl: '/projects/worklifebalancer.com/homepage.gif',
+        tags: ['Next.js', 'ShadcnUI', 'Supabase'],
+      },
+    },
+  ]
 
   const blog = new GithubBlog({
     repo: 'geangontijo/gean.dev.br',
@@ -104,7 +125,7 @@ export async function getStaticProps({locale}) {
 
   return {
     props: {
-      projects: data.items,
+      projects: projects,
       articles: data2.edges
         .sort(
           (a, b) =>

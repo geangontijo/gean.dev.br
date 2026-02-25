@@ -23,7 +23,12 @@ import {
   FaReact,
   FaSass,
 } from 'react-icons/fa'
-import { SiChakraui, SiNextdotjs } from 'react-icons/si'
+import {
+  SiChakraui,
+  SiNextdotjs,
+  SiSupabase,
+  SiTailwindcss,
+} from 'react-icons/si'
 import useMediaQuery from '../hook/useMediaQuery'
 import Image from 'next/image'
 
@@ -60,6 +65,12 @@ export default function Cards({ imageURL, title, slug, desc, tag }) {
     } else if (tag == 'Chakra UI') {
       values[0] = 'teal'
       values[1] = SiChakraui
+    } else if (tag == 'MySQL' || tag == 'Supabase') {
+      values[0] = 'blue'
+      values[1] = SiSupabase
+    } else if (tag == 'ShadcnUI') {
+      values[0] = 'black'
+      values[1] = SiTailwindcss
     } else {
       values[0] = 'gray'
       values[1] = FaCode
