@@ -128,17 +128,30 @@ export async function getStaticProps({ locale }) {
     pager: { limit: 100, offset: 0 },
   })
 
-  const localProject = {
-    title: 'WorkLifeBalancer',
-    frontmatter: {
-      summary:
-        'A specialized tool to help users track and balance their personal life with work commitments.',
-      image: '/projects/worklifebalancer.com/homepage.gif',
-      techStack: 'Next.js, ShadcnUI, Supabase',
-      slug: 'worklifebalancer',
-      date: '2026-02-24',
+  const localProjects = [
+    {
+      title: 'Dijkstra Cities',
+      frontmatter: {
+        summary:
+          'Shortest route finder between Brazilian cities using Dijkstra\'s Algorithm with interactive graph visualization.',
+        image: '/projects/dijkstra-cities/shortest_route.png',
+        techStack: 'Python, NetworkX, Matplotlib',
+        slug: 'https://github.com/geangontijo/dijkstra-cities',
+        date: '2026-04-16',
+      },
     },
-  }
+    {
+      title: 'WorkLifeBalancer',
+      frontmatter: {
+        summary:
+          'A specialized tool to help users track and balance their personal life with work commitments.',
+        image: '/projects/worklifebalancer.com/homepage.gif',
+        techStack: 'Next.js, ShadcnUI, Supabase',
+        slug: 'worklifebalancer',
+        date: '2026-02-24',
+      },
+    },
+  ]
 
   const fetchedProjects = projectsData.edges
     .sort(
@@ -150,7 +163,7 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
-      projects: [localProject, ...fetchedProjects],
+      projects: [...localProjects, ...fetchedProjects],
       ...(await serverSideTranslations(locale, ['common'])),
     },
   }

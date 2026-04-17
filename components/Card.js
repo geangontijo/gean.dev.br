@@ -90,12 +90,19 @@ export default function Cards({ imageURL, title, slug, desc, tag }) {
       <TagLabel>{item}</TagLabel>
     </Tag>
   ))
+  const isExternal = slug.startsWith('http')
+  const projectUrl = isExternal ? slug : `/projects/${slug}`
+
   const handleClick = (event) => {
     ReactGA.event({
       category: 'click',
       action: event,
     })
-    router.push(`/projects/${slug}`)
+    if (isExternal) {
+      window.open(slug, '_blank')
+    } else {
+      router.push(projectUrl)
+    }
   }
 
   return (
@@ -107,7 +114,7 @@ export default function Cards({ imageURL, title, slug, desc, tag }) {
       borderColor={{ base: '#333', md: 'borderColor' }}
       borderRadius="10px"
     >
-      <Link href={`/projects/${slug}`}>
+      <Link href={projectUrl} target={isExternal ? '_blank' : undefined}>
         <ScaleFade transition={{ duration: 1 }} in={true}>
           <Center w="auto">
             <Image
@@ -138,7 +145,8 @@ export default function Cards({ imageURL, title, slug, desc, tag }) {
               >
                 <Link
                   color="white"
-                  href={`/projects/${slug}`}
+                  href={projectUrl}
+                  target={isExternal ? '_blank' : undefined}
                   onClick={() =>
                     handleClick(`project_${title.replace('@', '-at')}`)
                   }

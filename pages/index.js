@@ -88,6 +88,16 @@ export async function getStaticProps({ locale }) {
   const projects = [
     {
       fields: {
+        title: 'Dijkstra Cities',
+        slug: 'https://github.com/geangontijo/dijkstra-cities',
+        description:
+          'Shortest route finder between Brazilian cities using Dijkstra\'s Algorithm with interactive graph visualization.',
+        imageUrl: '/projects/dijkstra-cities/shortest_route.png',
+        tags: ['Python', 'NetworkX', 'Matplotlib'],
+      },
+    },
+    {
+      fields: {
         title: 'WorkLifeBalancer',
         slug: 'worklifebalancer',
         description:
