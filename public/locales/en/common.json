@@ -1,7 +1,7 @@
 {
   "hello-there": "Hello there!, I'm -",
   "software-enginner": "Software Engineer",
-  "main-description": "5+ Years of experience, turning ideas into code and scalable systems!",
+  "main-description": "{{years}}+ Years of experience, turning ideas into code and scalable systems!",
   "secondary-description": "🚀 Specialization in Back-end (Laravel / PHP)",
   "tech-lead-in": "Tech Lead at",
   "about-me": "About me",

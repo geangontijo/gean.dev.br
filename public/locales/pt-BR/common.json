@@ -1,7 +1,7 @@
 {
   "hello-there": "Olá!, eu sou -",
   "software-enginner": "Engenheiro de Software",
-  "main-description": "5+ Anos de experiência, transformando ideias em código e sistemas escaláveis!",
+  "main-description": "{{years}}+ Anos de experiência, transformando ideias em código e sistemas escaláveis!",
   "secondary-description": "🚀 Especialização em Back-end (Laravel / PHP)",
   "tech-lead-in": "Tech Lead no",
   "about-me": "Sobre mim",

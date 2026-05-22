@@ -16,6 +16,7 @@ import { useTranslation } from 'next-i18next'
 export default function Introduction({ introduction }) {
   const { t } = useTranslation()
   const isLargerThan800 = useMediaQuery(800)
+  const yearsOfExperience = new Date().getFullYear() - 2020
   const handleClick = (event) => {
     ReactGA.event({
       category: 'click',
@@ -83,7 +84,7 @@ export default function Introduction({ introduction }) {
           <Box as="span" color="displayColor">
             {t('software-enginner')}.
           </Box>{' '}
-          {t('main-description')}
+          {t('main-description', { years: yearsOfExperience })}
         </Heading>
       </SlideFade>
 
