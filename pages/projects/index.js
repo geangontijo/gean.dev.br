@@ -45,7 +45,7 @@ export default function Projects({ projects }) {
           />
           <meta
             property="og:image"
-            content="https://i.imgur.com/o7GMsA6.jpeg"
+            content="https://i.imgur.com/YDXF3XY.png"
           />
           <meta property="og:url" content="https://gean.dev.br/blog" />
 
@@ -60,7 +60,7 @@ export default function Projects({ projects }) {
             property="twitter:description"
           />
           <meta
-            content="https://i.imgur.com/o7GMsA6.jpeg"
+            content="https://i.imgur.com/YDXF3XY.png"
             property="twitter:image"
           />
         </Head>

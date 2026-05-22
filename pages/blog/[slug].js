@@ -116,7 +116,7 @@ export default function Post({ metadata, publishedDate, source, toc }) {
                   border="1px solid textPrimary"
                   name="Gean Gontijo"
                   size="xs"
-                  src="https://i.imgur.com/ceOruJ0.png"
+                  src="https://i.imgur.com/YDXF3XY.png"
                 />
 
                 <Text color="textPrimary" fontSize={['xs', 'xs', 'sm', 'sm']}>

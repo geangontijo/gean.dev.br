@@ -39,7 +39,7 @@ export default function Index({ introduction, projects, articles, contactMe }) {
           />
           <meta
             property="og:image"
-            content="https://i.imgur.com/o7GMsA6.jpeg"
+            content="https://i.imgur.com/YDXF3XY.png"
           />
           <meta property="og:url" content="https://gean.dev.br" />
 
@@ -54,7 +54,7 @@ export default function Index({ introduction, projects, articles, contactMe }) {
             property="twitter:description"
           />
           <meta
-            content="https://i.imgur.com/o7GMsA6.jpeg"
+            content="https://i.imgur.com/YDXF3XY.png"
             property="twitter:image"
           />
         </Head>

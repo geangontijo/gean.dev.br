@@ -31,7 +31,7 @@ export default function Index({ posts }) {
           <meta content="https://gean.dev.br/blog" property="og:url" />
           <meta property="og:title" content="Gean Gontijo | Engenheiro de Software"/>
           <meta property="og:description" content="Escrevendo código que faz a diferença no dia a dia"/>
-          <meta property="og:image" content="https://i.imgur.com/o7GMsA6.jpeg"/>
+          <meta property="og:image" content="https://i.imgur.com/YDXF3XY.png"/>
           <meta property="og:url" content="https://gean.dev.br/blog"/>
 
           <meta content="summary_large_image" property="twitter:card" />
@@ -48,7 +48,7 @@ export default function Index({ posts }) {
             property="twitter:description"
           />
           <meta
-            content="https://i.imgur.com/o7GMsA6.jpeg"
+            content="https://i.imgur.com/YDXF3XY.png"
             property="twitter:image"
           />
         </Head>

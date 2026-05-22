@@ -112,7 +112,7 @@ export default function AboutMe() {
                 objectFit="cover"
                 borderRadius="10%"
                 alt="Gean Gontijo"
-                src="https://i.imgur.com/ceOruJ0.png"
+                src="https://i.imgur.com/YDXF3XY.png"
               />
             </Box>
           </Flex>
